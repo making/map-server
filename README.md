@@ -1,6 +1,6 @@
 ## Map Server
 
-A multi-tenant map server.
+A multi-tenant hash-map server.
 
 This server is intended to be used for a practice to implement a CF Service Broker.
 
