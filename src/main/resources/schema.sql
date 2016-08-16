@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS space (
+  space_id VARCHAR(64) PRIMARY KEY
+);
+
+CREATE TABLE IF NOT EXISTS user (
+  user_id  VARCHAR(64) PRIMARY KEY,
+  password VARCHAR(128),
+  space_id VARCHAR(64) REFERENCES SPACE (space_id)
+);
