@@ -70,7 +70,7 @@ should be called in `cf delete-service`.
 #### Create a user in the space
 
 ``` console
-$ curl -i -u admin:admin -XPOST http://localhost:8080/spaces/3e92a22a-e64d-48a4-8413-0a275db1b1f1/users
+$ curl -i -u admin:admin -XPOST http://localhost:8080/spaces/3e92a22a-e64d-48a4-8413-0a275db1b1f1/users -d '{"userId":"00380abb-988f-4111-9922-37dd9ba50f20"}' -H 'Content-Type:application/json'
 HTTP/1.1 201 Created
 Server: Apache-Coyote/1.1
 X-Content-Type-Options: nosniff

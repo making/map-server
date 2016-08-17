@@ -19,9 +19,8 @@ public class UserController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	ResponseEntity<User> newUser(@PathVariable("spaceId") String spaceId) {
-		User user = new User();
-		user.setUserId(UUID.randomUUID().toString());
+	ResponseEntity<User> newUser(@PathVariable("spaceId") String spaceId,
+			@RequestBody User user) {
 		user.setPassword(UUID.randomUUID().toString());
 		user.setSpaceId(spaceId);
 		userMapper.insert(user);

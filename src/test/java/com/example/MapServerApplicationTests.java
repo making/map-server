@@ -55,10 +55,12 @@ public class MapServerApplicationTests {
 	}
 
 	JsonNode createUser(String spaceId) {
+		String userId = UUID.randomUUID().toString();
 		RequestEntity<?> req3 = RequestEntity
 				.post(UriComponentsBuilder.fromHttpUrl("http://localhost:" + port)
 						.pathSegment("spaces", spaceId, "users").build().toUri())
-				.header(HttpHeaders.AUTHORIZATION, BASIC_ADMIN).build();
+				.header(HttpHeaders.AUTHORIZATION, BASIC_ADMIN)
+				.body(Collections.singletonMap("userId", userId));
 		ResponseEntity<JsonNode> res3 = restTemplate.exchange(req3, JsonNode.class);
 		assertThat(res3.getStatusCode(), is(HttpStatus.CREATED));
 		return res3.getBody();
